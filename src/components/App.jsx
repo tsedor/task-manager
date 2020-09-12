@@ -1,9 +1,10 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import store from '../store';
+import Dashboard from './Dashboard';
+import LoginForm from './LoginForm';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -15,14 +16,17 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
+  const token = useSelector(state => state.user.token);
   return (
     <>
       <GlobalStyle />
-      <Provider store={store}>
         <Router>
-          App
+          {token === '' && <Redirect to="/login" />}
+          <Switch>
+            <Route path="/login" component={LoginForm} />
+            <Route path="/" component={Dashboard} />
+          </Switch>
         </Router>
-      </Provider>
     </>
   )
 }
