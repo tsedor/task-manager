@@ -2,7 +2,7 @@ import { LOGIN_REQUEST_FAILURE, LOGIN_REQUEST_SUCCESS, LOGIN_REQUEST } from "./u
 
 const initialState = {
   request: false,
-  token: ''
+  token: 'tmp'
 };
 
 const userReducer = (state = initialState, action) => {
