@@ -26,3 +26,6 @@ export const loginRequest = ({ login, password }) => {
     }
   }
 }
+
+export const selectToken = state => state.user.token;
+export const selectLoginRequestState = state => state.user.request;

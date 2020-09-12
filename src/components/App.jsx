@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 import Dashboard from './Dashboard';
 import LoginForm from './LoginForm';
+import { selectToken } from '../reducers/user/userActions';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -16,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-  const token = useSelector(state => state.user.token);
+  const token = useSelector(selectToken);
   return (
     <>
       <GlobalStyle />
