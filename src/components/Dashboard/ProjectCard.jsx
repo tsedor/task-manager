@@ -42,12 +42,12 @@ const ProjectCardProgress = styled.div`
   }
 `;
 
-const ProjectCard = ({ tasks, completedTasks, id }) => {
+const ProjectCard = ({ tasks, completedTasks, id, name, description }) => {
   const history = useHistory();
   return (
     <ProjectCardContainer onClick={() => history.push(`/project/${id}`)}>
-      <ProjectCardTitle>Arraio</ProjectCardTitle>
-      <ProjectCardDescription>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugiat ex nobis id rem sint, animi quis alias odit similique.</ProjectCardDescription>
+      <ProjectCardTitle>{name}</ProjectCardTitle>
+      <ProjectCardDescription>{description}</ProjectCardDescription>
       <ProjectCardTasksNumber>{completedTasks} / {tasks}</ProjectCardTasksNumber>
       <ProjectCardProgress progress={completedTasks / tasks * 100}></ProjectCardProgress>
     </ProjectCardContainer>

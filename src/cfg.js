@@ -14,6 +14,7 @@ export const css = {
     medium: '1em',
     big: '2em'
   },
-  borderRadius: '4px',
+  borderRadius: '1px',
+  boxShadow: '0 0 2px 1px rgba(0,0,0,.2)',
   transition: 'all .3s ease-in'
 }
